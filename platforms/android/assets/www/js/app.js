@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','ng-mfb'])
+angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','uiGmapgoogle-maps'])
 
 .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
      $ionicPlatform.ready(function () {
@@ -35,7 +35,22 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
       controller: 'AddEvent'
       
     })
-    $urlRouterProvider.otherwise('/list');
+    .state('map', {
+      url: '/map',
+      templateUrl: 'template/map.html',
+      controller: 'MapCtrl'
+      
+    })
+    $urlRouterProvider.otherwise('/map');
+
+})
+
+.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyCoPcuyCvMGRVgKdCxEzrylIdKOkRq9h5M',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
 })
 .controller('ListController', ['$scope', '$http', '$state',
     function($scope, $http, $state) {
@@ -60,32 +75,8 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
   }
 }
   )
-.controller('MapController', function($scope, $ionicLoading) {
- 
-    google.maps.event.addDomListener(window, 'load', function() {
-      console.log("In the **** map -_-")
-        var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
- 
-        var mapOptions = {
-            center: myLatlng,
-            zoom: 16,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
- 
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
- 
-        navigator.geolocation.getCurrentPosition(function(pos) {
-            map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-            var myLocation = new google.maps.Marker({
-                position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-                map: map,
-                title: "My Location"
-            });
-        });
- 
-        $scope.map = map;
+.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
+      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     });
- 
-});
 
 
