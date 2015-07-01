@@ -3826,10 +3826,10 @@ md-input-container {
     left: 2px; }
     md-input-container > md-icon + input {
       margin-left: 36px; }
-  md-input-container textarea, md-input-container input[type="text"], md-input-container input[type="password"], md-input-container input[type="datetime"], md-input-container input[type="datetime-local"], md-input-container input[type="date"], md-input-container input[type="month"], md-input-container input[type="time"], md-input-container input[type="week"], md-input-container input[type="number"], md-input-container input[type="email"], md-input-container input[type="url"], md-input-container input[type="search"], md-input-container input[type="tel"], md-input-container input[type="color"] {
+  /*md-input-container textarea, md-input-container input[type="text"], md-input-container input[type="password"], md-input-container input[type="datetime"], md-input-container input[type="datetime-local"], md-input-container input[type="date"], md-input-container input[type="month"], md-input-container input[type="time"], md-input-container input[type="week"], md-input-container input[type="number"], md-input-container input[type="email"], md-input-container input[type="url"], md-input-container input[type="search"], md-input-container input[type="tel"], md-input-container input[type="color"] {*/
     /* remove default appearance from all input/textarea */
-    -moz-appearance: none;
-    -webkit-appearance: none; }
+  /*  -moz-appearance: none;
+    -webkit-appearance: none; }*/
   md-input-container input[type="date"], md-input-container input[type="datetime-local"], md-input-container input[type="month"], md-input-container input[type="time"], md-input-container input[type="week"] {
     min-height: 26px; }
   md-input-container textarea {

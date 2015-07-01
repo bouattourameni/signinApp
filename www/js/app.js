@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','uiGmapgoogle-maps'])
+angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','ngMap'])
 
 .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
      $ionicPlatform.ready(function () {
@@ -35,23 +35,17 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
       controller: 'AddEvent'
       
     })
-    .state('map', {
-      url: '/map',
-      templateUrl: 'template/map.html',
-      controller: 'MapCtrl'
-      
-    })
-    $urlRouterProvider.otherwise('/map');
+    
+    $urlRouterProvider.otherwise('/list');
 
 })
 
-.config(function(uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyCoPcuyCvMGRVgKdCxEzrylIdKOkRq9h5M',
-        v: '3.17',
-        libraries: 'weather,geometry,visualization'
-    });
-})
+ .config( function($mdThemingProvider){
+    // Configure a dark theme with primary foreground yellow
+    $mdThemingProvider.theme('docs-dark', 'default')
+        .primaryPalette('yellow')
+        .dark();
+  })
 .controller('ListController', ['$scope', '$http', '$state',
     function($scope, $http, $state) {
       console.log('hqhq');
@@ -75,8 +69,6 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
   }
 }
   )
-.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
-      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-    });
+
 
 

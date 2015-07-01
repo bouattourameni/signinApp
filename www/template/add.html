@@ -1,26 +1,47 @@
 <ion-view> 
  <ion-content>
- <md-content md-theme="docs-dark">
+ 
 <md-input-container flex>
           <label>Title</label>
           <input ng-model="addEvent.title">
         </md-input-container>
- </md-content>
-<md-input-container flex>
+
+
+<md-input-container flex >
         <label>Description</label>
-        <textarea ng-model="addEvent.description" columns="1" md-maxlength="150"></textarea>
+        <textarea ng-model="addEvent.description" columns="3" md-maxlength="150"></textarea>
       </md-input-container>
  
- <md-input-container md-no-float>
-      <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
-      <input ng-model="addEvent.adresse" type="text" placeholder="Address" >
-    </md-input-container>   
 
+ <md-input-container>
+      <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
+      <input ng-model="addEvent.adresse" placeholder="Address" >
+    </md-input-container>  
+    
+
+<!-- <div map-lazy-load="http://maps.google.com/maps/api/js">
+  <map center="41,-87" zoom="3"></map>
+</div>
+-->
+<div>
+      <map center="current-location" zoom="6">
+        <info-window position="current-location" visible="true">
+          <span>You are here.</span>
+        </info-window>
+      </map>
+    </div>
+
+<md-radio-group>
       <md-radio-button value="private" class="md-primary">Private</md-radio-button>
       <md-radio-button value="public" class="md-primary"> Public </md-radio-button>
     </md-radio-group> 
+
+
+
    <button class="button button-full button-positive">
   Add Event
 </button>
+
+
  </ion-content>
 </ion-view>

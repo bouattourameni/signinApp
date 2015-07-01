@@ -13,3 +13,12 @@
     height: 100%;
 }
 .angular-google-map-container { height: 400px; }
+
+.text-aria-class{
+	border-bottom: 1px solid rgba(0,0,0,0.12);
+
+	} 
+.text-aria-class:not(.md-input-has-value) input:not(:focus) {
+    color: transparent; }{
+
+}
