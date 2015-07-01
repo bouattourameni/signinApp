@@ -15,14 +15,15 @@
       <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
       <input ng-model="addEvent.adresse" type="text" placeholder="Address" >
     </md-input-container>   
-<p> Google Map</p>
 
-    <div ng-controller="MapController" id="map" data-tap-disabled="true"></div>
-    <md-radio-group ng-model="addEvent.type">
       <md-radio-button value="private" class="md-primary">Private</md-radio-button>
       <md-radio-button value="public" class="md-primary"> Public </md-radio-button>
     </md-radio-group> 
+<p ng-controller="MapCtrl"> Google Map
 
+    <div id="map" data-tap-disabled="true"></div>
+
+    </p>
    <button class="button button-full button-positive">
   Add Event
 </button>
