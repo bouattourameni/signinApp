@@ -57,6 +57,9 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.fbsignin972162"
         },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.fbsignin972162"
+        },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.fbsignin972162"
         },
@@ -64,9 +67,6 @@
             "PACKAGE_NAME": "com.ionicframework.fbsignin972162"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.fbsignin972162"
-        },
-        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ionicframework.fbsignin972162"
         }
     },
