@@ -19,7 +19,7 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
 
      */    
   }
-}); 
+); 
 
 })
 .config(function($stateProvider, $urlRouterProvider) {
@@ -63,6 +63,7 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
 .controller('MapController', function($scope, $ionicLoading) {
  
     google.maps.event.addDomListener(window, 'load', function() {
+      console.log("In the **** map -_-")
         var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
  
         var mapOptions = {
