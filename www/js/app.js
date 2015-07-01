@@ -6,7 +6,8 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
     // for form inputs)
      console.log('run in')
      
-     if(window.localStorage.getItem("id") == undefined)  {
+  /*   Facebook authentification
+  if(window.localStorage.getItem("id") == undefined)  {
       console.log('if structure')
              $cordovaOauth.facebook("838665296203217", ["email"]).then(function(result) {
          
@@ -16,7 +17,7 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
            alert('Facebook login failed: ' + error);
         });
 
-         
+     */    
   }
 }); 
 
