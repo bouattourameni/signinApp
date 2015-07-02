@@ -1,6 +1,6 @@
 angular.module('ionicApp')
-.controller('AdresseController',['$scope',
-	function($scope){
+.controller('AdresseController',['$scope','$http',
+	function($scope,$http){
 		var _this = this;
 		this.adresse = '';
 		$scope.$watch('adresse', function(newVal){
@@ -39,6 +39,34 @@ function callback(predictions, status) {
     return;
   }
   console.log(predictions);
+  var prediction = predictions[0];
+  var lat;
+  var lng;
+  var service = new google.maps.places.PlacesService(document.getElementById('map-canvas'));
+        service.getDetails({placeId: prediction.id},
+          function(place, status){
+              if (status == google.maps.places.PlacesServiceStatus.OK) {
+      			var marker = new google.maps.Marker({
+        		map: map,
+        		position: place.geometry.location
+      });
+          }
+          else {
+          	console.log(status);
+          	return;
+          }
+      }
+              
+        );
+
+  var myLatlng = new google.maps.LatLng(lat, lng);
+      var myOptions = {
+        zoom: 8,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
 	}	
 
 	}
