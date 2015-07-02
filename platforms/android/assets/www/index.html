@@ -5,9 +5,10 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-
+    <link href="css/style.css" rel="stylesheet">
     <link href="lib/angular-material/angular-material.css" rel="stylesheet"></link>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -28,8 +29,12 @@
     <script src="lib/angular-material/angular-material.js"></script>
     <script src="lib/ng-mfb/src/mfb-directive.js"></script>
 
- <script src="http://maps.google.com/maps/api/js"></script>
+ <script src="http://maps.google.com/maps/api/js?libraries=places"></script>
 <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
+
+<script src="js/events/controllers/AddEventController.js"></script>
+<script src="js/events/controllers/AdresseController.js"></script>
+<script src="js/events/controllers/ListEventController.js"></script>
 
   </head>
   <body ng-app="ionicApp" class="platform-android platform-cordova platform-webview">

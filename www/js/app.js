@@ -1,3 +1,4 @@
+
 angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','ngMap'])
 
 .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
@@ -27,12 +28,12 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
     .state('list', {
       url: '/list',
       templateUrl: 'template/list.html',
-      controller: 'ListController'
+      controller: 'ListEventController as listEvent'
     })
     .state('add', {
       url: '/add',
       templateUrl: 'template/add.html',
-      controller: 'AddEvent'
+      controller: 'AddEventController as addEvent'
       
     })
     
@@ -40,35 +41,8 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
 
 })
 
- .config( function($mdThemingProvider){
-    // Configure a dark theme with primary foreground yellow
-    $mdThemingProvider.theme('docs-dark', 'default')
-        .primaryPalette('yellow')
-        .dark();
-  })
-.controller('ListController', ['$scope', '$http', '$state',
-    function($scope, $http, $state) {
-      console.log('hqhq');
-    $http.get('js/event.json').success(function(data) {
-      console.log('sucess read json');
-      $scope.events = data.events;
-      $scope.doRefresh =function() {
-      $http.get('js/event.json').success(function(data) {
-          $scope.events = data.events;
-          $scope.$broadcast('scroll.refreshComplete'); 
-        });
-      }
-    });
-}])
-.controller('AddEvent', function($scope){
-  $scope.addEvent = {
-    title : '',
-    description : '',
-    adresse : '',
-    type : ''
-  }
-}
-  )
+
+
 
 
 
