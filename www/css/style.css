@@ -35,3 +35,6 @@ textarea.text-aria-class:not(md-input-container.md-input-has-value) {
 .autocompletedemoCustomTemplate .autocomplete-custom-template .item-title md-icon {
   height: 18px;
   width: 18px; }
+.appear{
+  height: 250px;
+}

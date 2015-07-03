@@ -1,5 +1,5 @@
 
-angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','ngMap'])
+angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','leaflet-directive'])
 
 .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
      $ionicPlatform.ready(function () {
@@ -34,6 +34,12 @@ angular.module('ionicApp', ['ionic','ngCordova', 'ngCordovaOauth','ngMaterial','
       url: '/add',
       templateUrl: 'template/add.html',
       controller: 'AddEventController as addEvent'
+      
+    })
+    .state('share', {
+      url: '/share',
+      templateUrl: 'template/share.html',
+      controller: 'ShareEventController as shareEvent'
       
     })
     

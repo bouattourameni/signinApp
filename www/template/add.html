@@ -20,16 +20,13 @@
   <map center="41,-87" zoom="3"></map>
 </div>
 -->
-<div ng-controller="AdresseController" class="ng-scope">
+<div ng-controller="AdresseController as addressCtrl">
   <md-input-container>
       <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
       <input ng-model="adresse" placeholder="Address" id="pac-input">
     </md-input-container> 
-      <map center="current-location" zoom="6" id="map-canvas">
-        <info-window position="current-location" visible="true">
-          <span>You are here.</span>
-        </info-window>
-      </map>
+      <leaflet class="appear" center="addressCtrl.center" id="map-canvas"></leaflet>
+      
     </div>
 
 <md-radio-group>
