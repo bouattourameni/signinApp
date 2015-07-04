@@ -1,20 +1,20 @@
 <ion-view> 
- <ion-content>
- 
+<ion-content>
+
 <md-input-container flex>
-          <label>Title</label>
-          <input ng-model="addEvent.title">
-        </md-input-container>
+<label>Title</label>
+<input ng-model="addEvent.title">
+</md-input-container>
 
 
 <md-input-container flex >
-        <label>Description</label>
-        <textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
-      </md-input-container>
- 
+<label>Description</label>
+<textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
+</md-input-container>
 
-  
-    
+
+
+
 
 <!-- <div map-lazy-load="http://maps.google.com/maps/api/js">
   <map center="41,-87" zoom="3"></map>
@@ -22,24 +22,24 @@
 -->
 <div ng-controller="AdresseController as addressCtrl">
   <md-input-container>
-      <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
-      <input ng-model="adresse" placeholder="Address" id="pac-input">
-    </md-input-container> 
-      <leaflet class="appear" center="addressCtrl.center" id="map-canvas"></leaflet>
-      
-    </div>
+  <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
+  <input ng-model="adresse" placeholder="Address">
+</md-input-container> 
+<div class="appear" id="map-canvas"></div>
+
+</div>
 
 <md-radio-group>
-      <md-radio-button value="private" class="md-primary">Private</md-radio-button>
-      <md-radio-button value="public" class="md-primary"> Public </md-radio-button>
-    </md-radio-group> 
+<md-radio-button value="private" class="md-primary">Private</md-radio-button>
+<md-radio-button value="public" class="md-primary"> Public </md-radio-button>
+</md-radio-group> 
 
 
 
-   <button class="button button-full button-positive">
+<button class="button button-full button-positive" href="#/share">
   Add Event
 </button>
 
 
- </ion-content>
+</ion-content>
 </ion-view>
