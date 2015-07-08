@@ -71,9 +71,12 @@ $scope.$watch('adresse', function(newVal){
           if (status == google.maps.places.PlacesServiceStatus.OK) {
             console.log(place);
             _this.map.setCenter(new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()));
-            
-          } else {
-            
+            if (predictions.length == 1){
+              placeMarker(new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()),_this.map);
+          
+            }
+            } else {
+
             return;
           }
         }

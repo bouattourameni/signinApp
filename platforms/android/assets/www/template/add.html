@@ -1,78 +1,43 @@
 <ion-view> 
- <ion-content>
- 
+<ion-content>
+
 <md-input-container flex>
-          <label>Title</label>
-          <input ng-model="addEvent.title">
-        </md-input-container>
+<label>Title</label>
+<input ng-model="addEvent.title">
+</md-input-container>
 
 
 <md-input-container flex >
-        <label>Description</label>
-        <textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
-      </md-input-container>
- 
+<label>Description</label>
+<textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
+</md-input-container>
 
-  
-    
+
+
+
 
 <!-- <div map-lazy-load="http://maps.google.com/maps/api/js">
   <map center="41,-87" zoom="3"></map>
 </div>
 -->
-<div ng-controller="AdresseController" class="ng-scope">
-<!--  <md-input-container>
-      <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
-      <input ng-model="adresse" placeholder="Address" id="pac-input">
-    </md-input-container> 
+<div ng-controller="AdresseController as addressCtrl">
+  <md-input-container>
+  <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
+  <input ng-model="adresse" placeholder="Address">
+</md-input-container> 
+<div class="appear" id="map-canvas"></div>
 
--->
-
- <md-autocomplete
-          ng-disabled="AdresseController.isDisabled"
-          md-no-cache="AdresseController.noCache"
-          md-selected-item="AdresseController.selectedItem"
-          md-search-text-change="AdresseController.searchTextChange(AdresseController.searchText)"
-          md-search-text="AdresseController.searchText"
-          md-selected-item-change="AdresseController.selectedItemChange(item)"
-          md-items="item in AdresseController.querySearch(AdresseController.searchText)"
-          md-item-text="item.name"
-          md-min-length="0"
-          placeholder="Pick an Angular repository"
-          md-menu-class="autocomplete-custom-template">
-        <md-item-template>
-          <span class="item-title">
-            <md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>
-            <span> {{item.name}} </span>
-          </span>
-          <span class="item-metadata">
-            <span class="item-metastat">
-              <strong>{{item.watchers}}</strong> watchers
-            </span>
-            <span class="item-metastat">
-              <strong>{{item.forks}}</strong> forks
-            </span>
-          </span>
-        </md-item-template>
-      </md-autocomplete>
-      <map center="current-location" zoom="6" id="mapcurrent">
-        <info-window position="current-location" visible="true">
-          <span>You are here.</span>
-        </info-window>
-      </map>
-    </div>
+</div>
 
 <md-radio-group>
-      <md-radio-button value="private" class="md-primary">Private</md-radio-button>
-      <md-radio-button value="public" class="md-primary"> Public </md-radio-button>
-    </md-radio-group> 
+<md-radio-button value="private" class="md-primary">Private</md-radio-button>
+<md-radio-button value="public" class="md-primary"> Public </md-radio-button>
+</md-radio-group> 
 
 
 
-   <button class="button button-full button-positive">
-  Add Event
-</button>
+<md-button class="md-raised md-primary full" href="#/share">Add Event</md-button>
 
 
- </ion-content>
+</ion-content>
 </ion-view>

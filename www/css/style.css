@@ -38,3 +38,6 @@ textarea.text-aria-class:not(md-input-container.md-input-has-value) {
 .appear{
   height: 250px;
 }
+.full{
+  width: 100%;
+}

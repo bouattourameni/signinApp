@@ -3,6 +3,7 @@ angular.module('ionicApp', ['ionic',
   'ngCordova', 
   'ngCordovaOauth',
   'ngMaterial',
+  'ngAria'
   ])
 
 .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
@@ -27,6 +28,7 @@ angular.module('ionicApp', ['ionic',
 })
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+  
   .state('list', {
     url: '/list',
     templateUrl: 'template/list.html',
@@ -41,7 +43,7 @@ angular.module('ionicApp', ['ionic',
   .state('share', {
     url: '/share',
     templateUrl: 'template/share.html',
-    controller: 'ShareEventController as shareEvent'
+   controller: 'ShareEventController as shareEvent'
     
   })
   

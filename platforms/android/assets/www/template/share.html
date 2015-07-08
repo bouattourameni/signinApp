@@ -1,0 +1,14 @@
+<ion-view> 
+<ion-content>
+ <ion-list>
+                <ion-item ng-repeat="contact in contacts" class="md-3-line">
+                <img ng-src="{{contact.photos[0]}}" class="md-avatar" />
+        <div class="md-list-item-text">
+          <h3>{{ contact.displayName }}</h3>
+          <p>{{ contact.emails[0].value }}</p>
+                 <md-checkbox class="md-secondary" ></md-checkbox>
+                 </div>
+                </ion-item>
+            </ion-list>
+</ion-content>
+</ion-view> 
