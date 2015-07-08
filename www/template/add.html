@@ -21,9 +21,9 @@
 </div>
 -->
 <div ng-controller="AdresseController as addressCtrl">
-  <md-input-container>
-  <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
-  <input ng-model="adresse" placeholder="Address">
+	<md-input-container>
+	<md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
+	<input ng-model="adresse" placeholder="Address" id="address">
 </md-input-container> 
 <div class="appear" id="map-canvas"></div>
 
@@ -40,7 +40,7 @@
 
 </ion-content>
 <ion-footer-bar class="bar-clear">
- <md-button class=" nomargin md-raised md-primary full nopadding" href="#/share">Add Event</md-button>
+<md-button class=" nomargin md-raised md-primary full nopadding" href="#/share">Add Event</md-button>
 
 </ion-footer-bar>
 </ion-view>
