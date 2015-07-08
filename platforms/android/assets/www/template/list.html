@@ -2,9 +2,6 @@
 <ion-content>
 <ion-refresher on-refresh="doRefresh()">
 </ion-refresher>
-<md-button class="md-primary md-fab md-fab-bottom-right" ng-href="#/add" aria-label="Add Event">
-<md-icon md-svg-src="img/ic_playlist_add_24px.svg"  md-ripple-size="auto"></md-icon>
-</md-button>
 <ion-list>
 <ion-item ng-repeat='item in events | filter: query'
 class="item-text-wrap" href="#/list/{{item.shortname}}">
@@ -16,4 +13,10 @@ class="item-text-wrap" href="#/list/{{item.shortname}}">
 </ion-list>
 
 </ion-content>
+<ion-footer-bar  class="bar-positive">
+<md-button class="md-primary md-fab md-fab-bottom-right" ng-href="#/add" aria-label="Add Event">
+<md-icon md-svg-src="img/ic_playlist_add_24px.svg"  md-ripple-size="auto"></md-icon>
+</md-button>
+
+</ion-footer-bar>
 </ion-view>

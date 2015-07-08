@@ -1,14 +1,23 @@
 <ion-view> 
 <ion-content>
- <ion-list>
-                <ion-item ng-repeat="contact in contacts" class="md-3-line">
-                <img ng-src="{{contact.photos[0]}}" class="md-avatar" />
-        <div class="md-list-item-text">
-          <h3>{{ contact.displayName }}</h3>
-          <p>{{ contact.emails[0].value }}</p>
-                 <md-checkbox class="md-secondary" ></md-checkbox>
-                 </div>
-                </ion-item>
-            </ion-list>
+<md-list>
+<md-list-item ng-repeat="contact in contacts" class="md-3-line">
+<!--<div layout="row">
+<div flex="80">-->
+<img ng-src="js/ic_perm_identity_48px.svg" class="md-avatar" />
+<div class="md-list-item-text">
+	<h3>{{ contact.displayName }}</h3>
+	<p>{{ contact.emails[0].value }}</p>
+<!--	</div>
+</div>-->
+	<md-checkbox class="md-secondary" ng-model="wanted[$index].selected" flex="20"></md-checkbox>
+</div>
+</md-list-item>
+</md-list>
 </ion-content>
+<ion-footer-bar class="bar-clear">
+ <md-button class=" nomargin md-raised md-primary full nopadding" ng-click="allSelected()">Share</md-button>
+
+</ion-footer-bar>
+</ion-view>
 </ion-view> 

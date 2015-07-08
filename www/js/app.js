@@ -34,6 +34,11 @@ angular.module('ionicApp', ['ionic',
     templateUrl: 'template/list.html',
     controller: 'ListEventController as listEvent'
   })
+  .state('detail', {
+    url: '/detail/:aId',
+    templateUrl: 'template/detail.html',
+    controller: 'DetailController as listEvent'
+  })
   .state('add', {
     url: '/add',
     templateUrl: 'template/add.html',

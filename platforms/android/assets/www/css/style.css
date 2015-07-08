@@ -40,4 +40,11 @@ textarea.text-aria-class:not(md-input-container.md-input-has-value) {
 }
 .full{
   width: 100%;
+  height: 100%
+}
+.nomargin {
+  margin:0px !important;
+}
+.nopadding {
+  padding:0px !important;
 }
