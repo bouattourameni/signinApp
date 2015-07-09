@@ -7,7 +7,7 @@ angular.module('ionicApp').controller('AddEventController', ['EventService',func
   }
   save = function(){
   	setTitle(addEvent.title);
-  	//console.log(getTitle());
+  	console.log(getTitle());
 
   }
   return true;

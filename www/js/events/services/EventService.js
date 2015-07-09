@@ -14,4 +14,5 @@ setTitle = function (title){
 	event.title = title;
 	return true;
 }
+return true;
 })
