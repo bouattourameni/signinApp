@@ -1,17 +1,13 @@
 angular.module('ionicApp')
-.controller('ListEventController', ['$scope','$http', '$state',
-    function($scope, $http, $state) {
-      
-    $http.get('js/event.json').success(function(data) {
-      console.log('success read json');
+.controller('ListEventController', ['$scope','$state','EventService',
+    function($scope,$state) {
 
-      $scope.events = data.events;
+      $scope.events = getListEvent();
       $scope.whichEvent=$state.params.aId;
+
+
       $scope.doRefresh =function() {
-      $http.get('js/event.json').success(function(data) {
-          $scope.events = data.events;
-          $scope.$broadcast('scroll.refreshComplete'); 
-        });
+      $scope.events = getListEvent();
       }
-    });
-}])
+    }
+]);

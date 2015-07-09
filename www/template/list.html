@@ -6,7 +6,7 @@
 <ion-item ng-repeat='item in events | filter: query'
 class="item-text-wrap" href="#/detail/{{item.title}}">
 <h2>{{item.title}}</h2>
-<h3>{{item.adresse}}</h3>
+<h3>{{item.address}}</h3>
 <p>{{item.description | limitTo: 100}}
 	{{ item.description.length > 150 ? '&hellip;' : '' }}</p>
 </ion-item>

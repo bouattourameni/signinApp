@@ -1,17 +1,15 @@
 angular.module('ionicApp')
-.controller('DetailController', ['$scope','$http', '$state',
+.controller('DetailController', ['$scope','$http', '$state','EventService',
   function($scope, $http, $state) {
 
-    $http.get('js/event.json').success(function(data) {
-      console.log('success read json');
+    $scope.events = getListEvent();
       $scope.event = {
         title : '',
         description : '',
         type : '',
-        addresse : ''
+        address : ''
 
       }
-      $scope.events = data.events;
       $scope.whichEvent=$state.params.aId;
       
       angular.forEach($scope.events, function (value , key){
@@ -19,11 +17,11 @@ angular.module('ionicApp')
           $scope.event.title=value.title;
           $scope.event.description=value.description;
           $scope.event.type=value.type;
-          $scope.event.addresse=value.adresse;
+          $scope.event.address=value.address;
         }
       });
 
 
     }
-    );
-  }])
+    
+])
