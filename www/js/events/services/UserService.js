@@ -1,3 +1,3 @@
-angular.module('ionicApp').factory('UserService',function(){
+angular.module('ionicApp').factory('UserService', function () {
 
-})
+});

@@ -1,3 +1,3 @@
-angular.module('ionicApp').factory('ShareService',function(){
+angular.module('ionicApp').factory('ShareService', function () {
 
-})
+});
