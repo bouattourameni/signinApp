@@ -1,8 +1,15 @@
-angular.module('ionicApp').controller('AddEventController', function(){
+angular.module('ionicApp').controller('AddEventController', ['EventService',function(){
   this.addEvent = {
-    title : '',
+    title : '123',
     description : '',
-    type : ''
+    type : '',
+    date : ''
   }
+  save = function(){
+  	setTitle(addEvent.title);
+  	//console.log(getTitle());
+
+  }
+  return true;
 }
-  )
+ ] )

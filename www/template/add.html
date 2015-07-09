@@ -29,18 +29,24 @@
 
 </div>
 
+
+
+
 <md-radio-group>
 <md-radio-button value="private" class="md-primary">Private</md-radio-button>
 <md-radio-button value="public" class="md-primary"> Public </md-radio-button>
 </md-radio-group> 
 
 
-
+<md-input-container flex>
+          <label>Event Date</label>
+          <input type="date" ng-model="addEvent.date">
+        </md-input-container>
 
 
 </ion-content>
 <ion-footer-bar class="bar-clear">
-<md-button class=" nomargin md-raised md-primary full nopadding" href="#/share">Add Event</md-button>
+<md-button class=" nomargin md-raised md-primary full nopadding" href="#/share" ng-click="save()">Add Event</md-button>
 
 </ion-footer-bar>
 </ion-view>
