@@ -7,7 +7,7 @@ angular.module('ionicApp', ['ionic',
 
     .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
         $ionicPlatform.ready(function () {
-                console.log('run in')
+                console.log('run in');
 
                 /*   Facebook authentification
                 if(window.localStorage.getItem("id") == undefined)  {
@@ -49,11 +49,11 @@ angular.module('ionicApp', ['ionic',
                 templateUrl: 'template/share.html',
                 controller: 'ShareEventController as shareEvent'
 
-            })
+            });
 
         $urlRouterProvider.otherwise('/list');
 
-    })
+    });
 
 
 

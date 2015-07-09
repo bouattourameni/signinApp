@@ -4,12 +4,12 @@ angular.module('ionicApp').controller('AddEventController', ['EventService', fun
         description: '',
         type: '',
         date: ''
-    }
+    };
     save = function () {
         setTitle(addEvent.title);
         console.log(getTitle());
 
-    }
+    };
     return true;
 }
-])
+]);

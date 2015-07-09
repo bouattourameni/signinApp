@@ -10,7 +10,7 @@ angular.module('ionicApp')
                         type: '',
                         addresse: ''
 
-                    }
+                    };
                     $scope.events = data.events;
                     $scope.whichEvent = $state.params.aId;
 
