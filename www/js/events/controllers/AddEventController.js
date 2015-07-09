@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular.module('ionicApp').controller('AddEventController', ['EventService','$scope',
 function($scope,EventService){
  _this = this;
@@ -17,21 +16,6 @@ this.saving = function() {
   	createEvent(getEvent());
 
   }
-
-=======
-angular.module('ionicApp').controller('AddEventController', ['EventService', function () {
-    this.addEvent = {
-        title: '123',
-        description: '',
-        type: '',
-        date: ''
-    };
-    save = function () {
-        setTitle(addEvent.title);
-        console.log(getTitle());
-
-    };
-    return true;
->>>>>>> origin/master
 }
+
 ]);

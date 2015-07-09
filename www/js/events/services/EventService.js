@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular.module('ionicApp').factory('EventService',function(){
 	var event = {
 		title : '',
@@ -128,23 +127,3 @@ getEvent = function(){
 }
 return true;
 })
-=======
-angular.module('ionicApp').factory('EventService', function () {
-    var event = {
-        title: '',
-        description: '',
-        type: '',
-        addresse: '',
-        date: ''
-    };
-
-    getTitle = function () {
-        return event.title;
-    };
-    setTitle = function (title) {
-        event.title = title;
-        return true;
-    };
-    return true;
-});
->>>>>>> origin/master
