@@ -1,52 +1,48 @@
-<ion-view> 
-<ion-content>
+<ion-view>
+    <ion-content>
 
-<md-input-container flex>
-<label>Title</label>
-<input ng-model="addEvent.title">
-</md-input-container>
-
-
-<md-input-container flex >
-<label>Description</label>
-<textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
-</md-input-container>
-
-
-
-
-
-<!-- <div map-lazy-load="http://maps.google.com/maps/api/js">
-  <map center="41,-87" zoom="3"></map>
-</div>
--->
-<div ng-controller="AdresseController as addressCtrl">
-	<md-input-container>
-	<md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
-	<input ng-model="adresse" placeholder="Address" id="address">
-</md-input-container> 
-<div class="appear" id="map-canvas"></div>
-
-</div>
-
-
-
-
-<md-radio-group>
-<md-radio-button value="private" class="md-primary">Private</md-radio-button>
-<md-radio-button value="public" class="md-primary"> Public </md-radio-button>
-</md-radio-group> 
-
-
-<md-input-container flex>
-          <label>Event Date</label>
-          <input type="date" ng-model="addEvent.date">
+        <md-input-container flex>
+            <label>Title</label>
+            <input ng-model="addEvent.title">
         </md-input-container>
 
 
-</ion-content>
-<ion-footer-bar class="bar-clear">
-<md-button class=" nomargin md-raised md-primary full nopadding" href="#/share" ng-click="save()">Add Event</md-button>
+        <md-input-container flex>
+            <label>Description</label>
+            <textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
+        </md-input-container>
 
-</ion-footer-bar>
+
+        <!-- <div map-lazy-load="http://maps.google.com/maps/api/js">
+          <map center="41,-87" zoom="3"></map>
+        </div>
+        -->
+        <div ng-controller="AdresseController as addressCtrl">
+            <md-input-container>
+                <md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
+                <input ng-model="adresse" placeholder="Address" id="address">
+            </md-input-container>
+            <div class="appear" id="map-canvas"></div>
+
+        </div>
+
+
+        <md-radio-group>
+            <md-radio-button value="private" class="md-primary">Private</md-radio-button>
+            <md-radio-button value="public" class="md-primary"> Public</md-radio-button>
+        </md-radio-group>
+
+
+        <md-input-container flex>
+            <label>Event Date</label>
+            <input type="date" ng-model="addEvent.date">
+        </md-input-container>
+
+
+    </ion-content>
+    <ion-footer-bar class="bar-clear">
+        <md-button class=" nomargin md-raised md-primary full nopadding" href="#/share" ng-click="save()">Add Event
+        </md-button>
+
+    </ion-footer-bar>
 </ion-view>
