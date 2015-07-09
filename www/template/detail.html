@@ -14,7 +14,25 @@
 
     </ion-content>
     <ion-footer-bar class="bar-clear">
-        <md-button class=" nomargin md-raised md-primary full nopadding">Participate</md-button>
-
+     <md-fab-toolbar md-open="false" count="0" ng-class="md-right" class="nopadding nomargin">
+    <md-fab-trigger class="align-with-text">
+      <md-button aria-label="menu" class="md-fab md-primary">
+        <md-icon md-svg-src="js/ic_toc_48px.svg"></md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-toolbar>
+      <md-fab-actions class="md-toolbar-tools">
+        <md-button aria-label="participate" class="md-icon-button">
+          <md-icon md-svg-src="img/ic_add_48px.svg"></md-icon>
+        </md-button>
+        <md-button aria-label="edit" class="md-icon-button">
+          <md-icon md-svg-src="img/ic_create_48px.svg"></md-icon>
+        </md-button>
+        <md-button aria-label="delete" class="md-icon-button">
+          <md-icon md-svg-src="img/ic_highlight_off_48px.svg"></md-icon>
+        </md-button>
+      </md-fab-actions>
+    </md-toolbar>
+  </md-fab-toolbar>
     </ion-footer-bar>
 </ion-view>
