@@ -1,19 +1,16 @@
-
-<ion-view> 
-<ion-content>
-<ion-refresher on-refresh="doRefresh()">
-</ion-refresher>
-<ion-list>
-<ion-item ng-repeat='item in events | filter: query'
-class="item-text-wrap" href="#/detail/{{item.title}}">
-<h2>{{item.title}}</h2>
-<h3>{{item.address}}</h3>
-<p>{{item.description | limitTo: 100}}
-	{{ item.description.length > 150 ? '&hellip;' : '' }}</p>
-</ion-item>
-</ion-list>
-
-
+<ion-view>
+    <ion-content>
+        <!--<ion-refresher on-refresh="doRefresh()">-->
+        <!--</ion-refresher>-->
+        <ion-list>
+            <ion-item ng-repeat='event in listEventCtrl.events'
+                      class="item-text-wrap" href="#/detail/{{event.title}}">
+                <h2>{{event.title}}</h2>
+                <h3>{{event.address}}</h3>
+                <p>{{event.description | limitTo: 100}}
+                    {{ event.description.length > 150 ? '&hellip;' : '' }}</p>
+            </ion-item>
+        </ion-list>
     </ion-content>
     <ion-footer-bar class="bar-positive">
         <md-button class="md-primary md-fab md-fab-bottom-right" ng-href="#/add" aria-label="Add Event">

@@ -1,15 +1,24 @@
 angular.module('ionicApp')
 
-.controller('ListEventController', ['$scope','$state','EventService',
-    function($scope,$state) {
-
-      $scope.events = getListEvent();
-      $scope.whichEvent=$state.params.aId;
-
-
-      $scope.doRefresh =function() {
-      $scope.events = getListEvent();
-      }
-    }
-]);
+    .controller('ListEventController', ['$state', 'EventService',
+        function ($state, EventService) {
+            console.log('#ListEventController');
+            var _this = this;
+            this.events = [];
+            //console.log('getListEvent returns ', getListEvent());
+            EventService
+                .getListEvent()
+                .then(function (events) {
+                    console.log('Found events from getListEvent ', events);
+                    _this.events = events;
+                })
+                .catch(function (err) {
+                    console.log('Error whith getListEvent ', err);
+                });
+            //
+            //this.doRefresh = function () {
+            //    this.events = getListEvent();
+            //}
+        }
+    ]);
 

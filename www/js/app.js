@@ -23,7 +23,6 @@ angular.module('ionicApp', ['ionic',
                */
             }
         );
-
     })
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -31,17 +30,17 @@ angular.module('ionicApp', ['ionic',
             .state('list', {
                 url: '/list',
                 templateUrl: 'template/list.html',
-                controller: 'ListEventController as listEvent'
+                controller: 'ListEventController as listEventCtrl'
             })
             .state('detail', {
                 url: '/detail/:aId',
                 templateUrl: 'template/detail.html',
-                controller: 'DetailController as listEvent'
+                controller: 'DetailController as detailCtrl'
             })
             .state('add', {
                 url: '/add',
                 templateUrl: 'template/add.html',
-                controller: 'AddEventController as addEvent'
+                controller: 'AddEventController as addEventCtrl'
 
             })
             .state('share', {

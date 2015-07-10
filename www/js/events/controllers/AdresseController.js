@@ -4,6 +4,7 @@ angular.module('ionicApp')
         '$http',
         '$timeout',
         function ($scope, $http, $timeout) {
+            console.log('#AddressController');
             var _this = this;
             this.address = '';
             this.center = {
@@ -13,9 +14,7 @@ angular.module('ionicApp')
             };
             var t = $timeout(function () {
             }, 5000);
-
             var pyrmont = new google.maps.LatLng(_this.center.lat, _this.center.lng);
-
             this.map = new google.maps.Map(document.getElementById('map-canvas'), {
                 center: pyrmont,
                 zoom: _this.center.zoom
@@ -23,8 +22,6 @@ angular.module('ionicApp')
             var marker;
             var bounds = new google.maps.LatLngBounds();
             geocoder = new google.maps.Geocoder();
-
-
             google.maps.event.addListener(this.map, 'click', function (e) {
                 placeMarker(e.latLng, this.map);
             });
@@ -57,22 +54,15 @@ angular.module('ionicApp')
                                         _this.map.setCenter(new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()));
                                         if (predictions.length == 1) {
                                             placeMarker(new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()), _this.map);
-
                                         }
                                     } else {
-
                                         return;
                                     }
                                 }
                             );
-
                         });
-
-
                 }
             });
-
-
             function placeMarker(position, map) {
                 if (marker != null) marker.setMap(null);
                 marker = new google.maps.Marker({

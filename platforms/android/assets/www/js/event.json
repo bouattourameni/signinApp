@@ -1,13 +1,13 @@
 {
   "events": [
     {
-      "title": "event 1",
+      "title": "even1",
       "description": "event",
       "type": "public",
       "adresse": "Sfax, Tunisia"
     },
     {
-      "title": "event 2",
+      "title": "event2",
       "description": "event",
       "type": "public",
       "adresse": "Sfax, Tunisia"

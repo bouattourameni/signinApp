@@ -1,7 +1,6 @@
 angular.module('ionicApp')
     .controller('ShareEventController', function ($scope, $cordovaContacts) {
-
-
+        console.log('#ShareEventController');
         $cordovaContacts.find({filter: 'Omar'}).then(function (result) {
             $scope.wanted = [];
             angular.forEach(result, function (contact) {
@@ -15,9 +14,7 @@ angular.module('ionicApp')
         }, function (error) {
             console.log("ERROR: " + error);
         });
-
         $scope.allSelected = function () {
             console.log($scope.wanted);
         }
-
     });
