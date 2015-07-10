@@ -9,10 +9,10 @@ angular.module('ionicApp', ['ionic',
         $ionicPlatform.ready(function () {
                 console.log('run in');
 
-                /*   Facebook authentification
+                 Facebook authentification
                 if(window.localStorage.getItem("id") == undefined)  {
                     console.log('if structure')
-                           $cordovaOauth.facebook("838665296203217", ["email"]).then(function(result) {
+                           $cordovaOauth.facebook("838665296203217", ["email","name"]).then(function(result) {
 
                          window.localStorage.setItem("id", result.access_token);
                          console.log(result);
@@ -20,7 +20,7 @@ angular.module('ionicApp', ['ionic',
                          alert('Facebook login failed: ' + error);
                       });
 
-               */
+               
             }
         );
     })

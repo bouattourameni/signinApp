@@ -6,7 +6,7 @@ angular.module('ionicApp')
         function ($scope, $http, $timeout) {
             console.log('#AddressController');
             var _this = this;
-            this.address = '';
+            $scope.address = '';
             this.center = {
                 lat: 40.095,
                 lng: -3.823,

@@ -6,9 +6,7 @@
             <ion-item ng-repeat='event in listEventCtrl.events'
                       class="item-text-wrap" href="#/detail/{{event.title}}">
                 <h2>{{event.title}}</h2>
-
                 <h3>{{event.address}}</h3>
-
                 <p>{{event.description | limitTo: 100}}
                     {{ event.description.length > 150 ? '&hellip;' : '' }}</p>
             </ion-item>
