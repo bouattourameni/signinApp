@@ -6,22 +6,19 @@
 
   <ion-content>
   
-          <h2>{{event.title}}</h2>
-          <h3>{{event.address}}</h3>
-          <p>{{event.description}}</p>
-          <p>{{event.type}}</p>
-
-
-    </ion-content>
-    <ion-footer-bar class="bar-clear">
-     <md-fab-toolbar md-open="false" count="0" ng-class="md-right" class="nopadding nomargin">
-    <md-fab-trigger class="align-with-text">
-      <md-button aria-label="menu" class="md-fab md-primary">
+          <h2>{{detailCtrl.event.title}}</h2>
+          <h3>{{detailCtrl.event.address}}</h3>
+          <p>{{detailCtrl.event.description}}</p>
+          <p>{{detailCtrl.event.type}}</p>
+<fab-speed-dial md-open="false" md-direction="right"
+                         ng-class="md-scale">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab md-warn">
         <md-icon md-svg-src="js/ic_toc_48px.svg"></md-icon>
       </md-button>
     </md-fab-trigger>
-    <md-toolbar>
-      <md-fab-actions class="md-toolbar-tools">
+    
+      <md-fab-actions>
         <md-button aria-label="participate" class="md-icon-button">
           <md-icon md-svg-src="img/ic_add_48px.svg"></md-icon>
         </md-button>
@@ -32,7 +29,11 @@
           <md-icon md-svg-src="img/ic_highlight_off_48px.svg"></md-icon>
         </md-button>
       </md-fab-actions>
-    </md-toolbar>
-  </md-fab-toolbar>
+    
+  </fab-speed-dial>
+
+    </ion-content>
+    <ion-footer-bar class="bar-clear">
+     
     </ion-footer-bar>
 </ion-view>

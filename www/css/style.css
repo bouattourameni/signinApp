@@ -48,3 +48,6 @@ textarea.text-aria-class:not(md-input-container.md-input-has-value) {
 .nopadding {
   padding:0px !important;
 }
+
+  .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000 !important; }

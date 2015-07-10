@@ -2,7 +2,7 @@ angular.module('ionicApp').controller('AddEventController', ['EventService', '$s
     function ($scope, EventService, $q, $http) {
         console.log('#AddEventController');
         _this = this;
-        _this.event = {};
+        this.event = {};
 
         this.title = '';
         this.description = '';
@@ -18,7 +18,7 @@ angular.module('ionicApp').controller('AddEventController', ['EventService', '$s
                     description: _this.description,
                     type: _this.type,
                     date: _this.date,
-                    address: _this.address
+                    address: document.getElementById('address').value
                 })
                 .then(function (result) {
                     console.log('event created ', result.data);
