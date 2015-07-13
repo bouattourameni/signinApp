@@ -4,7 +4,7 @@
         <!--</ion-refresher>-->
         <ion-list>
             <ion-item ng-repeat='event in listEventCtrl.events'
-                      class="item-text-wrap" href="#/detail/{{event.title}}">
+                      class="item-text-wrap" href="#/detail/{{event.id}}">
                 <h2>{{event.title}}</h2>
                 <h3>{{event.address}}</h3>
                 <p>{{event.description | limitTo: 100}}

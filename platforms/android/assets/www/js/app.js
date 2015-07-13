@@ -3,13 +3,22 @@ angular.module('ionicApp', ['ionic',
     'ngCordovaOauth',
     'ngMaterial',
     'ngAria'
+
 ])
 
-    .run(function ($ionicPlatform, $rootScope, $cordovaOauth) {
+    .run(function ($ionicPlatform, $rootScope, $cordovaOauth,$http) {
         $ionicPlatform.ready(function () {
                 console.log('run in');
-
-                 Facebook authentification
+                $http
+                .post("http://3ac64109.ngrok.com/auth/facebook")
+                .then(function (result) {
+                    console.log('user login ', result);
+                })
+                .catch(function (err) {
+                    console.log('Error when user login ', err);
+                    return 'Failed creating event';
+                });
+            /*     Facebook authentification
                 if(window.localStorage.getItem("id") == undefined)  {
                     console.log('if structure')
                            $cordovaOauth.facebook("838665296203217", ["email","name"]).then(function(result) {
@@ -20,7 +29,7 @@ angular.module('ionicApp', ['ionic',
                          alert('Facebook login failed: ' + error);
                       });
 
-               
+              */ 
             }
         );
     })
@@ -36,6 +45,11 @@ angular.module('ionicApp', ['ionic',
                 url: '/detail/:aId',
                 templateUrl: 'template/detail.html',
                 controller: 'DetailController as detailCtrl'
+            })
+            .state('edit', {
+                url: '/edit/:aId',
+                templateUrl: 'template/edit.html',
+                controller: 'EditEventController as editCtrl'
             })
             .state('add', {
                 url: '/add',

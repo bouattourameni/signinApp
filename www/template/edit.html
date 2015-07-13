@@ -1,13 +1,17 @@
 <ion-view> 
+
 <ion-content>
+
 <md-input-container flex>
 <label>Title</label>
-<input ng-model="addEvent.title">
+<input ng-model="editCtrl.title">
 </md-input-container>
+
 <md-input-container flex >
 <label>Description</label>
-<textarea class="text-aria-class" ng-model="addEvent.description" columns="3" md-maxlength="350"></textarea>
+<textarea class="text-aria-class" ng-model="editCtrl.description" columns="3" md-maxlength="350"></textarea>
 </md-input-container>
+
 <div ng-controller="AdresseController as addressCtrl">
 	<md-input-container>
 	<md-icon md-svg-src="img/ic_pin_drop_48px.svg" style="display:inline-block;"></md-icon>
@@ -15,17 +19,20 @@
 	</md-input-container> 
 <div class="appear" id="map-canvas"></div>
 </div>
-<md-radio-group ng-model="addEvent.type">
+
+<md-radio-group ng-model="editCtrl.type">
 <md-radio-button value="private" class="md-primary">Private</md-radio-button>
 <md-radio-button value="public" class="md-primary"> Public </md-radio-button>
 </md-radio-group> 
+
 <md-input-container flex>
 <label>Event Date</label>
-<input type="date" ng-model="addEvent.date">
+<input type="date" ng-model="editCtrl.date">
 </md-input-container>
+
 </ion-content>
 <ion-footer-bar class="bar-clear">
-<md-button class=" nomargin md-raised md-primary full nopadding"  ng-click="addEvent.saving()">Add Event</md-button>
+<md-button class=" nomargin md-raised md-primary full nopadding"  ng-click="editCtrl.saving()">Edit Event</md-button>
 <!--href="#/share"-->
 </ion-footer-bar>
 </ion-view>

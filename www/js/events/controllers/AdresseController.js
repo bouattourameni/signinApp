@@ -2,8 +2,7 @@ angular.module('ionicApp')
     .controller('AdresseController',
     ['$scope',
         '$http',
-        '$timeout',
-        function ($scope, $http, $timeout) {
+        function ($scope, $http) {
             console.log('#AddressController');
             var _this = this;
             $scope.address = '';
@@ -12,17 +11,23 @@ angular.module('ionicApp')
                 lng: -3.823,
                 zoom: 8
             };
-            var t = $timeout(function () {
-            }, 5000);
+            
             var pyrmont = new google.maps.LatLng(_this.center.lat, _this.center.lng);
             this.map = new google.maps.Map(document.getElementById('map-canvas'), {
                 center: pyrmont,
                 zoom: _this.center.zoom
             });
             var marker;
+
+
             var bounds = new google.maps.LatLngBounds();
+
             geocoder = new google.maps.Geocoder();
+
             google.maps.event.addListener(this.map, 'click', function (e) {
+                placeMarker(e.latLng, this.map);
+            });
+            google.maps.event.addListener(this.map, 'mousedown', function (e) {
                 placeMarker(e.latLng, this.map);
             });
             $scope.$watch('address', function (newVal) {
@@ -51,9 +56,11 @@ angular.module('ionicApp')
                                 function (place, status) {
                                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                                         console.log(place);
-                                        _this.map.setCenter(new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()));
+                                        _this.map.setCenter(new google.maps.LatLng(place.geometry.location.lat(), 
+                                            place.geometry.location.lng()));
                                         if (predictions.length == 1) {
-                                            placeMarker(new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()), _this.map);
+                                            placeMarker(new google.maps.LatLng(place.geometry.location.lat(), 
+                                                place.geometry.location.lng()), _this.map);
                                         }
                                     } else {
                                         return;

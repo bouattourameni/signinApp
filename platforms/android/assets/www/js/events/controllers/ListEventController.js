@@ -19,6 +19,7 @@ angular.module('ionicApp')
             //this.doRefresh = function () {
             //    this.events = getListEvent();
             //}
+            //
         }
     ]);
 

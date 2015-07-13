@@ -1,44 +1,17 @@
-<ion-header-bar class="bar-positive">
-    <h2 class="title">More Info</h2>
-</ion-header-bar>
-
 <ion-view>
+<ion-content>
+<md-whiteframe class="md-whiteframe-z3" layout layout-margin layout-align="space-around center" >
+<center> <h2 flex="80">{{detailCtrl.event.title}}</h2></center>
+<md-button class="md-icon-button md-primary" aria-label="Menu" layout-align="end center" flex = "20" 
+ng-click="showGrid($event)">
+<md-icon md-svg-icon="img/ic_more_vert_48px.svg"></md-icon>
+</md-button>
+</md-whiteframe>
+<h4>{{detailCtrl.event.address}}</h4><br>
+<p>{{detailCtrl.event.description}}</p><br>
+<p>{{detailCtrl.event.type}}</p>
 
-  <ion-content>
-  
-          
 
-  <md-whiteframe class="md-whiteframe-z3" layout layout-align="center center">
-    <h2>{{detailCtrl.event.title}}</h2><br>
-          
-  </md-whiteframe>
-  <h4>{{detailCtrl.event.address}}</h4><br>
-          <p>{{detailCtrl.event.description}}</p><br>
-          <p>{{detailCtrl.event.type}}</p>
-<fab-speed-dial md-open="false" md-direction="right"
-                         ng-class="md-scale">
-    <md-fab-trigger>
-      <md-button aria-label="menu" class="md-fab md-warn">
-        <md-icon md-svg-src="js/ic_toc_48px.svg"></md-icon>
-      </md-button>
-    </md-fab-trigger>
-    
-      <md-fab-actions>
-        <md-button aria-label="participate" class="md-icon-button">
-          <md-icon md-svg-src="img/ic_add_48px.svg"></md-icon>
-        </md-button>
-        <md-button aria-label="edit" class="md-icon-button">
-          <md-icon md-svg-src="img/ic_create_48px.svg"></md-icon>
-        </md-button>
-        <md-button aria-label="delete" class="md-icon-button">
-          <md-icon md-svg-src="img/ic_highlight_off_48px.svg"></md-icon>
-        </md-button>
-      </md-fab-actions>
-    
-  </fab-speed-dial>
+</ion-content>
 
-    </ion-content>
-    <ion-footer-bar class="bar-clear">
-     
-    </ion-footer-bar>
 </ion-view>
